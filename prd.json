@@ -1,0 +1,126 @@
+{
+  "feature": "N-central Device Inactivity Dashboard",
+  "stories": [
+    {
+      "id": "scaffold-dev-server",
+      "title": "Local Express proxy server for N-central",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Express serves public UI",
+        "GET /api/devices proxies normalized device data"
+      ],
+      "testCommand": "npm test -- -t \"server\""
+    },
+    {
+      "id": "bucketization-logic",
+      "title": "Bucketize devices by inactivity age",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Buckets are <=30, <=90, >90, unknown",
+        "Handles missing or invalid timestamps"
+      ],
+      "testCommand": "npm test -- -t \"bucketization\""
+    },
+    {
+      "id": "sorting-logic",
+      "title": "Client sorting for name, customer ID, and last check-in",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Sorts ascending/descending for target columns",
+        "Null timestamps sort last"
+      ],
+      "testCommand": "npm test -- -t \"sorting\""
+    },
+    {
+      "id": "normalize-devices",
+      "title": "Normalize N-central device records",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Normalized output shape matches UI expectations",
+        "Timestamps are parsed to ISO or null"
+      ],
+      "testCommand": "npm test -- -t \"normalize\""
+    },
+    {
+      "id": "data-provider-abstraction",
+      "title": "Switchable data provider (local proxy vs Rewst webhook)",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Provider supports local and rewst modes",
+        "Docs explain rewst webhook expectations"
+      ],
+      "testCommand": "npm test -- -t \"provider\""
+    },
+    {
+      "id": "rewst-export",
+      "title": "Export single-file HTML for Rewst",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "dist/rewst-embed.html contains inline CSS and JS",
+        "Inline window.DASH_CONFIG exists"
+      ],
+      "testCommand": "npm test -- -t \"export\""
+    },
+    {
+      "id": "ui-layout",
+      "title": "Dashboard UI with filters, sorting, and status",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Header, filters, load button, status area exist",
+        "Sortable table columns render"
+      ],
+      "testCommand": "npm test -- -t \"ui\""
+    },
+    {
+      "id": "env-docs",
+      "title": "Document local env vars and setup",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "README lists env vars",
+        "README lists local setup"
+      ],
+      "testCommand": "npm test -- -t \"docs\""
+    },
+    {
+      "id": "rewst-docs",
+      "title": "Document Rewst import steps",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "README and agents.md mention Rewst import",
+        "Rewst data expectations documented"
+      ],
+      "testCommand": "npm test -- -t \"rewst-docs\""
+    },
+    {
+      "id": "server-pagination",
+      "title": "Handle paging and filtering in N-central API",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Paging caps enforced",
+        "Org unit filtering applied"
+      ],
+      "testCommand": "npm test -- -t \"pagination\""
+    },
+    {
+      "id": "token-refresh",
+      "title": "Token caching and refresh for N-central",
+      "status": "incomplete",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Cached tokens reused",
+        "Refresh and retry on 401/403"
+      ],
+      "testCommand": "npm test -- -t \"auth\""
+    }
+  ]
+}

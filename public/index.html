@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>N-central Device Inactivity Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>N-central Device Inactivity Dashboard</h1>
+      <p>Local-first dashboard with Rewst-ready export.</p>
+    </header>
+
+    <section class="controls">
+      <label for="orgUnitId">Org Unit ID</label>
+      <input id="orgUnitId" type="text" placeholder="Optional org unit id" />
+      <button id="loadDevices">Load</button>
+    </section>
+
+    <section class="filters">
+      <span>Quick filters:</span>
+      <div id="bucketFilters" class="bucket-filters"></div>
+    </section>
+
+    <section class="status-bar">
+      <div id="status" class="status">Idle.</div>
+      <div id="count" class="count">0 devices</div>
+    </section>
+
+    <section class="table-wrapper">
+      <table id="deviceTable">
+        <thead>
+          <tr>
+            <th data-sort="longName">Name</th>
+            <th data-sort="deviceClass">Class</th>
+            <th data-sort="customerId">Customer ID</th>
+            <th data-sort="lastCheckinTime">Last Check-in</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <script src="config.sample.js"></script>
+    <script src="provider.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
