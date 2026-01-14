@@ -1,0 +1,3 @@
+# Progress Log
+# Timestamp: YYYY-MM-DD HH:MM
+# Rule: append-only. Each iteration logs story id, changes, and test result.
